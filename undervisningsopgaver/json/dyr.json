@@ -1,33 +1,26 @@
 [{
-        "navn": "gris",
-        "type": "pattedyr",
-        "billede": "http://helf-kea.dk/test/gris.png",
-        "levested": "svinefarme"
-            },
-    {
-        "navn": "frø",
-        "type": "amfibie",
-        "billede": "https://www.freeiconspng.com/uploads/frog-icon-27.png",
-        "levested": "vand"
-            },
-    {
-        "navn": "ræv",
-        "type": "pattedyr",
-        "billede": "http://helf-kea.dk/test/fox.png",
-        "levested": "skov"
-            },
-    {
-        "navn": "sild",
-        "type": "fisk",
-        "billede": "http://helf-kea.dk/test/sild.jpg",
-        "levested": "vand"
-            },
-    {
-        "navn": "krokodille",
-        "type": "pattedyr",
-        "billede": "http://helf-kea.dk/test/kroko.jpg",
-        "levested": "Amazona"
-            }
-
-
-        ]
+    "navn": "Gris",
+    "type": "Pattedyr",
+    "levested": "Stalden",
+    "billede": "http://helf-kea.dk/test/gris.png"
+        }, {
+    "navn": "frø",
+    "type": "Amfibie",
+    "levested": "åen",
+    "billede": "http://helf-kea.dk/test/frog.png"
+        }, {
+    "navn": "ræv",
+    "type": "Pattedyr",
+    "levested": "skoven",
+    "billede": "http://helf-kea.dk/test/fox.png"
+        }, {
+    "navn": "sild",
+    "type": "Fisk",
+    "levested": "havet",
+    "billede": "http://helf-kea.dk/test/sild.jpg"
+        }, {
+    "navn": "Krokodille",
+    "type": "Krybdyr",
+    "levested": "krybdyr fra floden",
+    "billede": "http://helf-kea.dk/test/kroko.jpg"
+        }]

@@ -1,79 +1,71 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine" rel="stylesheet">
-</head>
+    <title>Personliste</title>
 
-<body>
-    <div id="liste">
-    </div>
 
     <style>
-        html {
-            background-color: lavender;
-        }
-
-        #liste {
+        #personliste {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            margin: 5vw;
-        }
-
-        .dyr {
-            border: 2px dotted grey;
-            margin: 4px;
-            padding: 10px;
-            background-color: ghostwhite
+            grid-template-columns: auto;
+            grid-gap: 1vw;
         }
 
         img {
             width: 100%;
         }
 
-        a {
-            text-decoration: none;
-            color: #9207f8;
-            font-family: 'Tangerine', cursive;
+        .allepersoner {
+            border: 1px solid black;
+            background-color: aliceblue;
+            text-align: center;
+            margin: 1vw;
         }
 
-        h2 {
-            font-family: 'Dancing Script', cursive;
+        @media only screen and (min-width:500px) {
+            #personliste {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media only screen and (min-width:800px) {
+            #personliste {
+                grid-template-columns: auto auto auto;
+            }
         }
 
     </style>
 
+</head>
+
+<body>
+
+    <div id="personliste"></div>
+
     <script>
-        let alleDyr = [];
         document.addEventListener("DOMContentLoaded", start);
+        let personer;
+        async function start() {
+            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+            console.log(personliste.json);
+            personer = await myJson.json();
+            console.log(personer);
+            visPersoner();
+        }
 
-        function start() {
-            let dest = document.querySelector("#liste");
-            async function getJson() {
-                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
-                alleDyr = await jsonData.json();
-                visDyr();
-            }
-
-            function visDyr() {
-                alleDyr.forEach(dyr => {
-                    dest.innerHTML += `
-                    <div class="dyr">
-                        <h2>${dyr.navn}</h2>
-<a href="http://github.com/${dyr.github}">Github konto</a>
-                        <img src= "${dyr.billede}">
-                    </div>
-`;
-                })
-            }
-            getJson()
+        function visPersoner() {
+            let dest = document.querySelector("#personliste");
+            personer.forEach(personer => {
+                dest.innerHTML += `<div class="allepersoner"> <h2>${personer.navn}</h2><img src=${personer.billede} alt=${personer.navn}><a href="https://github.com/${personer.github}">GitHub</a></div>`;
+            })
         }
 
     </script>
+
+
 </body>
 
 </html>
