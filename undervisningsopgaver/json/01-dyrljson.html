@@ -1,58 +1,56 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="">
-</head>
-
-<body>
-    <div id="liste">
-    </div>
 
     <style>
-        #liste {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-
         .dyr {
             border: 1px solid black;
-            margin: 1px;
-            padding: 6px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: (1fr, 1fr);
+            grid-gap: 1vw;
         }
 
     </style>
 
+
+</head>
+
+<body>
+
+    <div id="liste"></div>
+
     <script>
-        let alleDyr = [];
+        let first = 0;
+        let last = 1;
         document.addEventListener("DOMContentLoaded", start);
+        let alleDyr = [];
+        async function start() {
+            const myJson = await fetch("dyr.json");
+            alleDyr = await myJson.json();
+            visDyr();
+        }
 
-        function start() {
+        function visDyr() {
             let dest = document.querySelector("#liste");
-            async function getJson() {
-                let jsonData = await fetch("dyr.json");
-                alleDyr = await jsonData.json();
-                visDyr();
-            }
-
-            function visDyr() {
-                alleDyr.forEach(dyr => {
-                    dest.innerHTML += `
-                    <div class="dyr">
-                        <h3>Navn: ${dyr.navn}</h3>
-                        <p>Type: ${dyr.type} <br> Levested: ${dyr.levested}</p>
-                        <img src= "${dyr.billede}">
-                    </div>
-`;
-                })
-            }
-            getJson()
+            alleDyr.forEach(dyr => {
+                dest.innerHTML += `<div class="minedyr"> <h3>${dyr.navn}</h3> <p>Type: ${dyr.type} Levested: $ {dyr.levested}</p> <img src=${dyr.billede} alt=${dyr.navn}></div>`;
+            })
         }
 
     </script>
+
+
+
+
 </body>
 
 </html>
