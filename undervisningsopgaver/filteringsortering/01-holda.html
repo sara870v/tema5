@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personliste</title>
+
+
+    <style>
+        #personliste {
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 1vw;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .allepersoner {
+            border: 1px solid black;
+            background-color: aliceblue;
+            text-align: center;
+            margin: 1vw;
+        }
+
+        @media only screen and (min-width:500px) {
+            #personliste {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media only screen and (min-width:800px) {
+            #personliste {
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="personliste"></div>
+
+    <script>
+        let personer = [];
+        let filter = "a";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            getJson();
+        }
+
+        async function getJson() {
+            let myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+
+            personer = await myJson.json();
+            console.log(personer);
+
+            visPersoner();
+            //console.log(person);
+
+        }
+
+
+
+        function visPersoner() {
+
+            let dest = document.querySelector("#personliste");
+            personer.forEach(person => {
+
+
+                if (person.hold == filter) {
+
+                    dest.innerHTML += `
+                        <div class="allepersoner">
+                        <h2>${person.navn}</h2>
+                        <img src=${person.billede} alt=${person.navn}>
+                        <a href="https://github.com/${person.github}">GitHub</a>
+                        </div>
+                                    `;
+                }
+            })
+        }
+
+    </script>
+
+
+</body>
+
+</html>
