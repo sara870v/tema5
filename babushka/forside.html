@@ -28,9 +28,9 @@
 
         .ret {
             background-color: lightgray;
-            text-align: center;
+            text-align: left;
             margin: 1vw;
-            padding: 5px;
+            padding: 10px;
         }
 
         h1 {
@@ -161,8 +161,19 @@
                     </article>`;
 
 
-                    dest.insertAdjacentHTML("beforeend", template)
+                    dest.insertAdjacentHTML("beforeend", template);
+                    dest.lastElementChild.addEventListener("click", visSingle);
 
+                    function visSingle() {
+                        document.querySelector("#indhold").innerHTML =
+                            `<article class="ret">
+                        <img src=babushkabilleder/imgs/small/${ret.billede}-sm.jpg alt=${ret.navn}>
+                        <h2>${ret.navn}</h2>
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+                        document.querySelector("#popup").style.display = "block";
+                    }
 
                     function close() {
                         document.querySelector("#popup").style.display = "none"
