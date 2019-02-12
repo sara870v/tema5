@@ -72,25 +72,38 @@
 
         #indhold {
             min-height: 50vh;
-            background-color: white;
-            width: 70vw;
+            width: 80vw;
+
             margin: 4rem auto;
+            padding: 10px;
         }
 
         #luk {
             position: fixed;
             right: 2rem;
+            top: 1rem;
+
 
         }
 
         #luk button {
-            font-size: 2rem;
-            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+            background-color: lightgray;
         }
 
         @media only screen and (min-width: 500px) {
             #retter {
                 grid-template-columns: auto auto;
+            }
+
+
+            #indhold {
+                min-height: 50vh;
+                width: 40vw;
+
+                margin: 4rem auto;
+                padding: 10px;
             }
         }
 
