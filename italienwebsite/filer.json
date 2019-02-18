@@ -1,0 +1,159 @@
+[{
+        "navn": "Ravioli",
+
+        "kort": "Pasta med svampefyld",
+
+        "pris": "110",
+
+        "billede": "pasta.jpg",
+
+        "kategori": "hovedret"
+},
+
+
+    {
+        "navn": "Pasta Penne",
+
+        "kort": "Pasta med flødesovs",
+
+        "pris": "120",
+
+        "billede": "pasta2.jpg",
+
+        "kategori": "hovedret"
+},
+
+    {
+        "navn": "Pasta med kødsovs",
+
+        "kort": "Pasta med tomatsovs og hakket oksekød",
+
+        "pris": "99",
+
+        "billede": "pasta.jpg",
+
+        "kategori": "hovedret"
+},
+
+
+    {
+        "navn": "Bruschetta",
+
+        "kort": "Ristet brød med tomat, balsilikum og olivenolie",
+
+        "pris": "79",
+
+        "billede": "bread.jpg",
+
+        "kategori": "forret"
+},
+
+
+    {
+        "navn": "Bruschetta blanding",
+
+        "kort": "Forskellige slags bruschettabrød",
+
+        "pris": "150",
+
+        "billede": "bread2.jpg",
+
+        "kategori": "forret"
+},
+
+    {
+        "navn": "Rosmarinbrød",
+
+        "kort": "Hjemmebagt rosmarinbrød",
+
+        "pris": "49",
+
+        "billede": "bread3.jpg",
+
+        "kategori": "forret"
+},
+
+    {
+        "navn": "Kødboller",
+
+        "kort": "Kodboller i sovs",
+
+        "pris": "120",
+
+        "billede": "meatballs.jpg",
+
+        "kategori": "hovedret"
+},
+
+    {
+        "navn": "Calzone",
+
+        "kort": "Hjemmebagt calzone med tomat og ost",
+
+        "pris": "99",
+
+        "billede": "calzone.jpg",
+
+        "kategori": "hovedret"
+},
+
+    {
+        "navn": "Tomatsalat",
+
+        "kort": "Skiveskåret tomat og mozeralla, toppet med frisk balsilikum",
+
+        "pris": "79",
+
+        "billede": "tomat.jpg",
+
+        "kategori": "forret"
+},
+
+    {
+        "navn": "Tomatsalat med peste",
+
+        "kort": "Finthakket tomat med mozeralla og pesto",
+
+        "pris": "79",
+
+        "billede": "tomat2.jpg",
+
+        "kategori": "forret"
+},
+    {
+        "navn": "Italiensk specialitet",
+
+        "kort": "Små håndbagte kager med indebagt svesker",
+
+        "pris": "69",
+
+        "billede": "dessert1.jpg",
+
+        "kategori": "dessert"
+},
+
+    {
+        "navn": "Sandkage",
+
+        "kort": "Hjemmebagt sandkage med blåbær",
+
+        "pris": "69",
+
+        "billede": "dessert3.jpg",
+
+        "kategori": "dessert"
+},
+    {
+        "navn": "Italiensk æblekage",
+
+        "kort": "Hjemmebagt æblekage toppet med fintskåret mandler",
+
+        "pris": "69",
+
+        "billede": "dessert4.jpg",
+
+        "kategori": "dessert"
+}
+
+
+]

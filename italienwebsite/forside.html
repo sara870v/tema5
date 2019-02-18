@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italien Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Italiana" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0;
+            background-color: #E1C699;
+        }
+
+        a,
+        h1,
+        p {
+            font-family: 'Italiana',
+                serif;
+        }
+
+        .tekst {
+            text-align: center;
+            margin: 40px 300px 10px 300px;
+            font-size: 1.5rem;
+        }
+
+
+        #retter {
+            display: grid;
+            /*            grid-template-columns: auto;*/
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-gap: 1vw;
+            /*max-width: 1000px;*/
+            /*margin: 0 auto;*/
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+
+
+        .ret {
+            background-color: lightgray;
+            text-align: left;
+            /*         margin: 1vw;*/
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            color: whitesmoke;
+        }
+
+        header {
+            padding: 15px;
+            text-align: center;
+            background-color: #A9A9B0;
+
+        }
+
+        button {
+            background-color: white;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            margin: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .valgt {
+            background-color: darkgrey;
+        }
+
+        #menu {
+            display: flex;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+        }
+
+        .cover {
+            background-image: url("cover.jpg");
+            width: 100vw;
+            height: 42.9vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+        /*
+#popup {
+top: 0;
+width: 100vw;
+height: 100vh;
+position: fixed;
+background-color: hsla(0, 15%, 48%, 0.5);
+display: none;
+overflow: scroll;
+}
+
+#indhold {
+min-height: 50vh;
+background-color: white;
+width: 70vw;
+margin: 4rem auto;
+}
+
+#luk {
+position: fixed;
+right: 2rem;
+
+}
+
+#luk button {
+font-size: 2rem;
+padding: 1rem 2rem;
+}
+*/
+
+
+        @media only screen and (min-width: 500px) {
+            #retter {
+                grid-template-columns: auto auto;
+            }
+        }
+
+        @media only screen and (min-width:800px) {
+            #retter {
+                grid-template-columns: auto auto auto;
+            }
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <!--
+<div id="popup">
+    <div id="luk">
+        <button>X</button>
+    </div>
+    <div id="indhold"></div>
+</div>
+-->
+
+    <header>
+        <h1 id="logo">Italiensk tema</h1>
+
+    </header>
+
+    <div class="cover">
+    </div>
+
+    <div class="tekst">
+        <p>
+            Det italienske køkken er hele Danmarks yndlingskøkken med elskede spiser som pizza, pasta, lasagne og cannelloni. Heldigvis behøver du ikke booke en ferie, for at komme en tur til Italien - du skal i stedet bare vælge en af disse nemme retter!
+        </p>
+    </div>
+
+    <menu id="menu">
+        <button class="filter valgt" data-ret="alle">Alle</button>
+        <button class="filter" data-ret="forretter">Forretter</button>
+        <button class="filter" data-ret="hovedretter">Hovedretter</button>
+        <button class="filter" data-ret="desserter">Desserter</button>
+    </menu>
+
+
+
+
+    <section id="retter"></section>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let retter;
+        let dest = document.querySelector("#retter");
+        let filter = "alle";
+
+        async function start() {
+            const myJson = await fetch("filer.json");
+            retter = await myJson.json();
+            visRetter();
+        }
+
+        function visRetter() {
+            dest.innerHTML = "";
+            retter.forEach(ret => {
+                if (filter == "alle" || filter == ret.kategori) {
+                    let template = `
+                    <article class="ret">
+                        <h2>${ret.navn}</h2>
+                        <img src="billeder/${ret.billede}" alt=${ret.navn}">
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+
+
+                    dest.insertAdjacentHTML("beforeend", template);
+
+                }
+            })
+        }
+
+        start();
+
+        document.querySelectorAll(".filter").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+
+        // Min funktion til at filtrere hvor jeg beder den om at fjerne mit markerede "valgt og tilføje det til den som bliver "valgt".
+
+        function filtrering() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            filter = this.getAttribute("data-ret");
+
+            visRetter();
+        }
+    </script>
+</body>
+
+</html>
