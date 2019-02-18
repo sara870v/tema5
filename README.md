@@ -1,5 +1,5 @@
 # tema5
 
 links til løsning på Babushka opgave: 
-med popup:
-med link til single:
+med popup: http://sarahdavidsen.dk/kea/2_semester/tema5/babushka/forside.html
+med link til single: http://sarahdavidsen.dk/kea/2_semester/tema5/babushka/forside2.html
