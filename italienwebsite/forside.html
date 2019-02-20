@@ -6,236 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominic De Coco</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0 auto;
-            padding: 0;
-            background-color: #F4EEE1;
-            overflow-x: hidden;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        a,
-        h1,
-        h2,
-        p {
-            font-family: 'Raleway', sans-serif;
-        }
-
-
-
-
-        #retter {
-            display: grid;
-            /*      grid-template-columns: auto;*/
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            grid-gap: 1vw;
-            max-width: 1000px;
-            margin: 0 auto;
-            justify-content: center;
-            margin-bottom: 100px;
-
-
-        }
-
-
-
-        .ret {
-
-            text-align: left;
-            padding-bottom: 10px;
-            margin: 30px 30px 30px 30px;
-            text-align: center;
-            background-color: white;
-            width: 350px;
-
-
-
-        }
-
-
-        header h1 {
-            display: flex;
-            text-align: left;
-            margin-left: 20px;
-            color: whitesmoke;
-            font-size: 25px;
-        }
-
-        header {
-            padding: 0.6px;
-            text-align: center;
-            background-color: #2C3539;
-
-        }
-
-        .tekst {
-            text-align: center;
-            margin: 40px 10px 5px 10px;
-            font-size: 1rem;
-        }
-
-        button {
-            background-color: #2C3539;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            margin: 5px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-        }
-
-
-        .valgt {
-            background-color: rgba(40, 50, 50, 0.24);
-
-
-        }
-
-        #menu {
-            display: flex;
-            justify-content: center;
-            padding: 25px;
-            flex-direction: row;
-        }
-
-        img {
-            width: 350px;
-            height: 350px;
-        }
-
-        .cover {
-            background-image: url("cover.jpg");
-            background-size: cover;
-            width: 100%;
-            height: 35vw;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        footer {
-            background-color: #2C3539;
-            height: 100px;
-            width: 100%;
-            color: white;
-            position: inherit;
-            bottom: 0;
-            left: 0;
-            padding: 5px 0 5px 30px;
-        }
-
-        footer p {
-            text-align: left;
-
-            line-height: 25px;
-
-        }
-
-        /*
-#popup {
-top: 0;
-width: 100vw;
-height: 100vh;
-position: fixed;
-background-color: hsla(0, 15%, 48%, 0.5);
-display: none;
-overflow: scroll;
-}
-
-#indhold {
-min-height: 50vh;
-background-color: white;
-width: 70vw;
-margin: 4rem auto;
-}
-
-#luk {
-position: fixed;
-right: 2rem;
-
-}
-
-#luk button {
-font-size: 2rem;
-padding: 1rem 2rem;
-}
-*/
-
-
-        @media only screen and (min-width: 500px) {
-            #retter {
-                grid-template-columns: auto auto;
-            }
-
-
-        }
-
-        @media only screen and (max-width: 500px) {
-
-            #menu {
-                flex-direction: column;
-            }
-
-            #menu button {
-                width: 150px;
-            }
-
-            .ret {
-                margin: 25px;
-                margin-left: 75px;
-            }
-
-
-        }
-
-
-
-        @media only screen and (min-width:800px) {
-            #retter {
-                grid-template-columns: auto auto auto;
-            }
-
-            .tekst {
-                text-align: center;
-                margin: 100px 300px 10px 300px;
-                font-size: 1.5rem;
-            }
-
-            header h1 {
-                margin-left: 130px;
-                font-size: 30px;
-            }
-
-
-        }
-
-        @media only screen and (max-width:800px) {
-            #retter {
-                max-width: 90%;
-            }
-        }
-    </style>
-
-
-
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    <!--
-<div id="popup">
-    <div id="luk">
-        <button>X</button>
+    <div id="popup">
+        <div id="box">
+            <div id="luk">
+                <button>X</button>
+            </div>
+            <div id="indhold"></div>
+        </div>
     </div>
-    <div id="indhold"></div>
-</div>
--->
 
 
 
@@ -243,10 +26,10 @@ padding: 1rem 2rem;
 
     </div>
 
-    <header>
+    <div id="header">
         <h1 id="logo">Dominic De Coco</h1>
 
-    </header>
+    </div>
 
     <div class="tekst">
         <p>
@@ -306,6 +89,23 @@ padding: 1rem 2rem;
 
 
                     dest.insertAdjacentHTML("beforeend", template);
+                    dest.lastElementChild.addEventListener("click", visSingle);
+
+                    function visSingle() {
+                        document.querySelector("#indhold").innerHTML =
+                            `<article class="ret2">
+                        <img src="billeder/${ret.billede}" alt=${ret.navn}">
+                        <h2>${ret.navn}</h2>
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+                        document.querySelector("#popup").style.display = "block";
+                        document.querySelector("#popup #luk").addEventListener("click", close);
+                    }
+
+                    function close() {
+                        document.querySelector("#popup").style.display = "none"
+                    }
 
                 }
             })
@@ -326,6 +126,24 @@ padding: 1rem 2rem;
             filter = this.getAttribute("data-ret");
 
             visRetter();
+        }
+
+
+        //Sticky nav bar herfra
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var header = document.getElementById("header");
+
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove("sticky");
+            }
         }
     </script>
 </body>
