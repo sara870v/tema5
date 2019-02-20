@@ -1,158 +1,148 @@
 [{
-        "navn": "Ravioli",
+        "navn": "Pasta de Brocolli",
 
-        "kort": "Pasta med svampefyld",
+        "kort": "Pasta m. brocolli, pesto og skinkestykker",
 
         "pris": "110",
 
-        "billede": "pasta.jpg",
+        "billede": "1pastaret.png",
 
-        "kategori": "hovedret"
+        "kategori": "hovedretter"
 },
 
 
     {
-        "navn": "Pasta Penne",
+        "navn": "Pasta de finferli",
 
         "kort": "Pasta med flødesovs",
 
         "pris": "120",
 
-        "billede": "pasta2.jpg",
+        "billede": "2pastaret.png",
 
-        "kategori": "hovedret"
+        "kategori": "hovedretter"
 },
 
     {
-        "navn": "Pasta med kødsovs",
+        "navn": "Pasta de zucca",
 
-        "kort": "Pasta med tomatsovs og hakket oksekød",
+        "kort": "Pasta med græskersovs og grovhakket græskarstykker",
 
         "pris": "99",
 
-        "billede": "pasta3.jpg",
+        "billede": "3pastaret.png",
 
-        "kategori": "hovedret"
+        "kategori": "hovedretter"
 },
 
 
     {
-        "navn": "Bruschetta",
+        "navn": "Spaghetti bolognese",
 
-        "kort": "Ristet brød med tomat, balsilikum og olivenolie",
+        "kort": "Pasta m. tomatsovs og hakket oksekød, toppet med balsilikum",
 
-        "pris": "79",
+        "pris": "100",
 
-        "billede": "bread.jpg",
+        "billede": "4pastaret.png",
 
-        "kategori": "forret"
+        "kategori": "hovedretter"
 },
 
 
     {
-        "navn": "Bruschetta blanding",
+        "navn": "Pasta pesto",
 
-        "kort": "Forskellige slags bruschettabrød",
+        "kort": "Pasta med pesto, tomat og balsilikum. Vegetarisk.",
 
-        "pris": "150",
+        "pris": "90",
 
-        "billede": "bread2.jpg",
+        "billede": "5pastaret.png",
 
-        "kategori": "forret"
+        "kategori": "hovederetter"
+},
+
+
+    {
+        "navn": "Pasta de chili",
+
+        "kort": "Pasta m. flødesovs og chili",
+
+        "pris": "100",
+
+        "billede": "6pastaret.png",
+
+        "kategori": "hovedretter"
 },
 
     {
-        "navn": "Rosmarinbrød",
+        "navn": "Tomatsovs",
 
-        "kort": "Hjemmebagt rosmarinbrød",
+        "kort": "2 stykker skiveskåret brød m. hjemmelavet tomatsovs",
 
-        "pris": "49",
+        "pris": "80",
 
-        "billede": "bread3.jpg",
+        "billede": "1forret.png",
 
-        "kategori": "forret"
+        "kategori": "forretter"
 },
 
     {
-        "navn": "Kødboller",
+        "navn": "Frisk salat",
 
-        "kort": "Kodboller i sovs",
+        "kort": "Frisk salat m. feta, skiveskåret æble og pinjekerner",
 
-        "pris": "120",
+        "pris": "90",
 
-        "billede": "meatballs.jpg",
+        "billede": "2forret.png",
 
-        "kategori": "hovedret"
+        "kategori": "forretter"
 },
 
     {
-        "navn": "Calzone",
+        "navn": "Suppe",
 
-        "kort": "Hjemmebagt calzone med tomat og ost",
+        "kort": "Grøntsagssuppe m. brødcroutoner og frisk balsilikum",
 
-        "pris": "99",
+        "pris": "70",
 
-        "billede": "calzone.jpg",
+        "billede": "3forret.png",
 
-        "kategori": "hovedret"
+        "kategori": "forretter"
 },
 
     {
-        "navn": "Tomatsalat",
+        "navn": "Grapefrugt m. vodka",
 
-        "kort": "Skiveskåret tomat og mozeralla, toppet med frisk balsilikum",
+        "kort": "Friskpresset grapefrugt m. vodka og sirup",
 
-        "pris": "79",
+        "pris": "50",
 
-        "billede": "tomat.jpg",
+        "billede": "1drik.png",
 
-        "kategori": "forret"
+        "kategori": "drinks"
 },
 
     {
-        "navn": "Tomatsalat med peste",
+        "navn": "Jalapenos mojito",
 
-        "kort": "Finthakket tomat med mozeralla og pesto",
+        "kort": "Mojito m. rørsukker og skiveskåret jalapenos",
 
-        "pris": "79",
+        "pris": "60",
 
-        "billede": "tomat2.jpg",
+        "billede": "2drik.png",
 
-        "kategori": "forret"
+        "kategori": "drinks"
 },
     {
-        "navn": "Italiensk specialitet",
+        "navn": "Blåbær mojito",
 
-        "kort": "Små håndbagte kager med indebagt svesker",
+        "kort": "Mojito m. rørsukker, blåbær og et skiveskåret grapefrugt",
 
-        "pris": "69",
+        "pris": "70",
 
-        "billede": "dessert1.jpg",
+        "billede": "3drik.png",
 
-        "kategori": "dessert"
-},
-
-    {
-        "navn": "Sandkage",
-
-        "kort": "Hjemmebagt sandkage med blåbær",
-
-        "pris": "69",
-
-        "billede": "dessert3.jpg",
-
-        "kategori": "dessert"
-},
-    {
-        "navn": "Italiensk æblekage",
-
-        "kort": "Hjemmebagt æblekage toppet med fintskåret mandler",
-
-        "pris": "69",
-
-        "billede": "dessert4.jpg",
-
-        "kategori": "dessert"
+        "kategori": "drinks"
 }
 
 
