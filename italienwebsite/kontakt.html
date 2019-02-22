@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominic De Coco</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="popup">
+        <div id="box">
+            <div id="luk">
+                <button>X</button>
+            </div>
+            <div id="indhold"></div>
+        </div>
+    </div>
+
+
+
+    <div class="cover">
+
+    </div>
+
+    <div id="header">
+        <h1 id="logo">Dominic De Coco</h1>
+
+    </div>
+
+
+    <div class="tilbageknap">
+        <a href="forside.html">
+            <button>Tilbage til menuen</button>
+        </a>
+    </div>
+    <div class="tekst2">
+        <div class="kasse">
+            <h1>Find os her</h1>
+
+            <p>Tlf: 31 41 67 43</p>
+            <p>Dominicdecoco_info@gmail.com</p>
+            <p>Grøntorvet 9, Valby 2500</p>
+
+        </div>
+        <div class="billede">
+            <img src="parallax.JPG" alt="kontakt os">
+        </div>
+
+    </div>
+
+
+
+    <section id="retter"></section>
+
+    <footer>
+        <p>Kontakt os her: <br>
+            31 41 67 43 <br>
+            Grøntorvet Valby </p>
+
+    </footer>
+
+
+
+    <script>
+        //Sticky nav bar herfra
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var header = document.getElementById("header");
+
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
