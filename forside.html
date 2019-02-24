@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominic De Coco</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="popup">
+        <div id="box">
+            <div id="luk">
+                <button>×</button>
+            </div>
+            <div id="indhold"></div>
+        </div>
+    </div>
+
+
+    <div class="cover">
+
+    </div>
+
+
+
+    <div id="header">
+        <h1 id="logo">Dominic De Coco</h1>
+
+    </div>
+
+
+    <div class="tekst">
+        <p>
+            Det italienske køkken er hele Danmarks yndlingskøkken med elskede spiser som pizza, pasta, lasagne og cannelloni. Heldigvis behøver du ikke booke en ferie, for at komme en tur til Italien - du skal i stedet bare vælge en af disse nemme retter!
+        </p>
+    </div>
+
+<!-- <div class="parallax"></div>-->
+
+    <nav id="menu">
+        <div class="top">
+            <button class="filter valgt" data-ret="alle">Alle</button>
+            <button class="filter" data-ret="forretter">Forretter</button>
+        </div>
+        <div class="bottom">
+            <button class="filter" data-ret="hovedretter">Hovedretter</button>
+            <button class="filter" data-ret="drinks">Drinks</button>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <section id="retter"></section>
+
+    <footer>
+        <p>Kontakt os her: <br>
+            31 41 67 43 <br>
+            Grøntorvet Valby <br>
+            Dominicdecoco_info@gmail.com</p>
+
+    </footer>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let retter;
+        let dest = document.querySelector("#retter");
+        let filter = "alle";
+
+        async function start() {
+            const myJson = await fetch("filer.json");
+            retter = await myJson.json();
+            visRetter();
+        }
+
+        function visRetter() {
+            dest.innerHTML = "";
+            retter.forEach(ret => {
+                if (filter == "alle" || filter == ret.kategori) {
+                    let template = `
+                    <article class="ret">
+                        <img src="billeder/${ret.billede}" alt=${ret.navn}">
+                        <h2>${ret.navn}</h2>
+
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+
+
+                    dest.insertAdjacentHTML("beforeend", template);
+                    dest.lastElementChild.addEventListener("click", visSingle);
+
+                    function visSingle() {
+                        document.querySelector("#indhold").innerHTML =
+                            `<article class="ret2">
+                        <img src="billeder/${ret.billede}" alt=${ret.navn}">
+                        <h2>${ret.navn}</h2>
+                        <p>${ret.kort}</p>
+                        <p>${ret.pris}kr.</p>
+                    </article>`;
+                        document.querySelector("#popup").style.display = "block";
+                        document.querySelector("#popup #luk").addEventListener("click", close);
+                    }
+
+                    function close() {
+                        document.querySelector("#popup").style.display = "none"
+                    }
+
+                }
+            })
+        }
+
+        start();
+
+        document.querySelectorAll(".filter").forEach(elm => {
+            elm.addEventListener("click", filtrering);
+        })
+
+
+        function filtrering() {
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            filter = this.getAttribute("data-ret");
+
+            visRetter();
+        }
+
+
+        //Sticky nav bar herfra
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var header = document.getElementById("header");
+
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>
