@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominic De Coco</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italiana" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- <div id="section">-->
+    <a href="forside.html">
+        <div class="cover">
+            <div class="logo2">
+
+            </div>
+        </div>
+    </a>
+
+
+
+    <div id="header">
+        <a href="forside.html">Menu</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="om.html">Om os</a>
+
+
+    </div>
+
+    <div class="tekst2">
+        <h1>Historien om os</h1>
+    </div>
+    <!--    </div>-->
+
+    <!-- <div class="parallax"></div>-->
+
+    <div id="section2">
+        <div class="boks1">
+            <p>Vi startede restauranten i 2014, hvor vi havde 2 kokke ansatte samt 4 tjenere. Efterhånden har vi udviklet os til et stort team på 30 medarbejdere, der hver dag giver hver deres for at opnå den kvalitet vi ønsker at bringe på Dominic De Coco.
+                <br>
+                <br>
+                Pasta og salater bestilles direkte fra kokkene på de enkelte stationer. Kokkene forbereder alle retterne til ordre foran gæsterne. Alle kan få deres måltid tilberedt til sin egen personlige præference. Favoritretter kan oprettes, og derefter individuelt raffineret. Urtehaven og de friske urter på borde er ikke kun til dekoration, men at tilbyde den specielle smag, som hver skål fortjener.</p>
+            <br>
+        </div>
+        <div class="boks2">
+            <img src="omospic.png" alt="Om os">
+        </div>
+    </div>
+
+
+
+
+
+
+    <section id="retter"></section>
+
+    <footer>
+        <p>Kontakt os her: <br>
+            31 41 67 43 <br>
+            Grøntorvet Valby <br>
+            Dominicdecoco_info@gmail.com</p>
+
+    </footer>
+
+
+
+    <script>
+        //Sticky nav bar herfra
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var header = document.getElementById("header");
+
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky")
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+</body>
+
+</html>

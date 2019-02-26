@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominic De Coco</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Italiana" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -20,26 +21,38 @@
         </div>
     </div>
 
+    <div id="section">
+        <a href="forside.html">
+            <div class="cover">
+                <div class="logo2">
 
-    <div class="cover">
+                </div>
+            </div>
+        </a>
 
+
+
+        <div id="header">
+            <a href="forside.html">Menu</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="om.html">Om os</a>
+
+
+        </div>
+
+        <div class="tekst">
+            <h1>Italian Cusine - homemade for you</h1>
+            <p>
+                Det italienske køkken er hele Danmarks yndlingskøkken med elskede spiser som pizza, pasta, lasagne og cannelloni. Heldigvis behøver du ikke booke en ferie, for at komme en tur til Italien - du skal i stedet bare vælge en af disse nemme retter!
+            </p>
+        </div>
     </div>
 
+    <!-- <div class="parallax"></div>-->
 
-
-    <div id="header">
-        <h1 id="logo">Dominic De Coco</h1>
-
+    <div class="overskrift">
+        ALLE
     </div>
-
-
-    <div class="tekst">
-        <p>
-            Det italienske køkken er hele Danmarks yndlingskøkken med elskede spiser som pizza, pasta, lasagne og cannelloni. Heldigvis behøver du ikke booke en ferie, for at komme en tur til Italien - du skal i stedet bare vælge en af disse nemme retter!
-        </p>
-    </div>
-
-<!-- <div class="parallax"></div>-->
 
     <nav id="menu">
         <div class="top">
@@ -90,8 +103,8 @@
                     <article class="ret">
                         <img src="billeder/${ret.billede}" alt=${ret.navn}">
                         <h2>${ret.navn}</h2>
-
-                        <p>${ret.pris}kr.</p>
+                        <p>${ret.pris} kr.-</p>
+                        <p>Klik og læs mere</p>
                     </article>`;
 
 
@@ -104,7 +117,8 @@
                         <img src="billeder/${ret.billede}" alt=${ret.navn}">
                         <h2>${ret.navn}</h2>
                         <p>${ret.kort}</p>
-                        <p>${ret.pris}kr.</p>
+                        <p>${ret.pris} kr.-</p>
+
                     </article>`;
                         document.querySelector("#popup").style.display = "block";
                         document.querySelector("#popup #luk").addEventListener("click", close);
@@ -132,6 +146,8 @@
             this.classList.add("valgt");
             filter = this.getAttribute("data-ret");
 
+            document.querySelector(".overskrift").textContent = this.textContent;
+
             visRetter();
         }
 
@@ -152,6 +168,7 @@
                 header.classList.remove("sticky");
             }
         }
+
     </script>
 </body>
 

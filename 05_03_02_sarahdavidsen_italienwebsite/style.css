@@ -7,21 +7,45 @@ html * {
 body {
     margin: 0;
     padding: 0;
-    background-color: #F4EEE1;
+    /*    background-color: #F4EEE1;*/
+    /*    background-color: rgb(199, 143, 128);*/
+    background: linear-gradient(to left, #e2d5ba, #fff4dc)
+        /*    background-color: #fad5a6;*/
+
+
 }
 
 
 a,
 h1,
 h2,
+button {
+    font-family: 'Italiana', serif;
+}
+
 p {
     font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#section {
+    /*    background-color: #f4d5da;*/
+    /*    background-color: #fbb79e;*/
+    background-color: #E1c699;
+
+    /*    background-color: #b39282;*/
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    height: 550px;
 }
 
 /* ---------------- GENERELT ----------------*/
 /* ---------------- COVER ----------------*/
 .cover {
-    background-image: url("coverrettet.jpg");
+    background-image: url("baggrund.png");
     background-size: cover;
     width: 100%;
     height: 35vw;
@@ -29,8 +53,27 @@ p {
     background-repeat: no-repeat;
 }
 
+.logo2 {
+    background-image: url("logo.svg");
+    background-size: contain;
+    width: 100%;
+    height: 30vw;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
 /* ---------------- COVER ----------------*/
 /* ---------------- KNAPPER ----------------*/
+
+.overskrift {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-family: 'Italiana', serif;
+    font-weight: 600;
+}
+
 #menu {
     display: flex;
     justify-content: center;
@@ -57,10 +100,22 @@ p {
 .ret {
     background-color: white;
 
+
 }
 
 .ret img {
     width: 100%;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
+
+}
+
+.ret:hover img {
+    opacity: 0.5;
 }
 
 .ret p,
@@ -76,15 +131,46 @@ h2 {
 #header {
     padding: 0.2px 0 0 30px;
     text-align: left;
-    background-color: #2C3539;
+    /*        background-color: #2C3539;*/
+    background-color: black;
     height: 80px;
 
 }
 
-#header h1 {
-    margin-top: 25px;
-    color: whitesmoke;
-    font-size: 25px;
+#header a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+    margin: 0 30px 0 0;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+
+}
+
+#header a:hover {
+    color: white;
+}
+
+#header a::before {
+    content: '';
+    display: block;
+    height: 5px;
+
+    background-color: white;
+
+    position: absolute;
+
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+#header a:hover::before {
+    width: 100%;
 }
 
 /* ---------------- HEADER ----------------*/
@@ -108,8 +194,14 @@ h2 {
 
 .tekst {
     text-align: left;
-    margin: 30px 15px 5px 15px;
-    font-size: 1rem;
+    margin: 30px 15px 5px 30px;
+    font-size: 1.1rem;
+}
+
+.tekst2 {
+    text-align: left;
+    margin: 30px 15px 5px 80px;
+    font-size: 1.1rem;
 }
 
 
@@ -117,7 +209,8 @@ h2 {
 /* ---------------- STYLING PÅ KNAPPER ----------------*/
 
 button {
-    background-color: #2C3539;
+    /*    background-color: #2C3539;*/
+    background-color: black;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -125,8 +218,15 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 5%;
 }
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 
 .valgt {
@@ -140,8 +240,8 @@ button {
 
 
 footer {
-    background-color: #2C3539;
-    min-height: 100px;
+    background-color: black;
+    min-height: 60px;
     color: white;
     position: inherit;
     bottom: 0;
@@ -150,7 +250,7 @@ footer {
 }
 
 footer p {
-    line-height: 25px;
+    line-height: 20px;
 
 }
 
@@ -211,6 +311,32 @@ footer p {
 }
 
 /* ---------------- POPUP ----------------*/
+/* ---------------- KONTAKT ----------------*/
+
+#section2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: 100px;
+    margin: 10px 0px 0px 30px;
+}
+
+#section2 img {
+    padding-right: 30px;
+    width: 100%;
+    height: auto;
+}
+
+#section2 .boks1 {
+    padding-right: 30px;
+}
+
+
+/* ---------------- KONTAKT ----------------*/
+
+
+
+
 /* ---------------- PARALAX ----------------*/
 .parallax {
     background-image: url(parallax.JPG);
@@ -228,26 +354,40 @@ footer p {
 /* ---------------- PARALAX ----------------*/
 /* ---------------- MEDIA ----------------*/
 
+
+
 @media only screen and (min-width: 500px) {
     #retter {
         grid-template-columns: 1fr 1fr;
     }
 
+    #section {
+        height: 650px;
+    }
+
+    .tekst {
+        margin: 50px 150px 0px 80px;
+    }
+
+    #header {
+        padding: 0.2px 0 0 80px;
+    }
 
 
+    #section2 img {
+        margin-top: 15px;
+        width: 380px;
+        height: auto;
+    }
+
+    #section2 .boks1 {
+        margin: 0 0 20px 50px;
+        width: 250px;
 
 
-
-}
-
-@media only screen and (max-width: 500px) {
-    .parallax {
-        display: none;
     }
 
 }
-
-
 
 @media only screen and (min-width:800px) {
     #retter {
@@ -256,14 +396,30 @@ footer p {
 
     .tekst {
         text-align: left;
-        margin: 70px 400px 50px 30px;
+        margin: 70px 550px 50px 80px;
         ;
         font-size: 1.5rem;
     }
 
-    header h1 {
-        margin-left: 130px;
-        font-size: 30px;
+
+    #section {
+        height: 1000px;
+    }
+
+    #header {
+        padding: 0.2px 0 0 80px;
+    }
+
+    #section2 img {
+        width: 600px;
+        height: auto;
+    }
+
+    #section2 .boks1 {
+        margin: 0 0 20px 50px;
+        width: 600px;
+        line-height: 30px;
+
     }
 
 
@@ -271,11 +427,7 @@ footer p {
 
 }
 
-@media only screen and (max-width:800px) {
-    .parallax {
-        display: none;
-    }
 
-}
+
 
 /* ---------------- MEDIA ----------------*/
